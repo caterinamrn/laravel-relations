@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Task;
+use App\Employee;
+
+use Illuminate\Database\Seeder;
+
 
 class TaskSeeder extends Seeder
 {
@@ -12,6 +15,16 @@ class TaskSeeder extends Seeder
      */
     public function run()
     {
-        factory();
+        factory(Task::class,40)
+        -> create()
+        -> each(function($task){
+
+          $emp = Employee::inRandomOrder()
+                -> take(rand(5,10))
+                -> get();
+
+          $task -> employees() -> attack($emp);
+
+        });
     }
 }

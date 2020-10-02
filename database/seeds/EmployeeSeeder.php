@@ -14,15 +14,15 @@ class EmployeeSeeder extends Seeder
     public function run()
     {
         factory(Employee::class,20)
-        -> make()
-        -> each(function($emp){
+                -> make()
+                -> each( function($emp){
 
-          $loc = Location::inRandomOrder() -> first();
-          
-          $emp -> location() -> associated($loc);
+                  $loc = Location::inRandomOrder() -> first();
 
-          $emp -> save();
+                  $emp -> location() -> associated($loc);
 
-        });
+                  $emp -> save();
+
+                });
     }
 }

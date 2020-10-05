@@ -12,8 +12,8 @@ $factory->define(Employee::class, function (Faker $faker) {
 
       'firstname' => $faker->firstName(),
       'lastname' => $faker -> lastName(),
-      'date_of_bith' => $faker -> date(),
+      'date_of_birth' => $faker -> date(),
       'private_code' => $faker -> isbn13()
-      
+
     ];
 });

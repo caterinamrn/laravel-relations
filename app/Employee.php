@@ -11,13 +11,13 @@ class Employee extends Model
       'firstname',
       'lastname',
       'location_id',
-      'date_of_bith',
+      'date_of_birth',
       'private_code'
 
     ];
 
     public function location(){
-      
+
       return $this->belongsTo(Location::class);
     }
 

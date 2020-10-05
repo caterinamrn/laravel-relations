@@ -19,7 +19,7 @@ class EmployeeSeeder extends Seeder
 
                   $loc = Location::inRandomOrder() -> first();
 
-                  $emp -> location() -> associated($loc);
+                  $emp -> location() -> associate($loc);
 
                   $emp -> save();
 
